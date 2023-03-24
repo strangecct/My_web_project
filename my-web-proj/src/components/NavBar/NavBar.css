@@ -6,8 +6,7 @@ nav.navbar {
     top: 0;
     z-index: 9999;
     transition: 0.32s ease-in-out;
-
-    background-color: violet !important;
+    background-color: transparent !important;
 }
 
 nav.navbar.scrolled {
@@ -19,8 +18,7 @@ nav.navbar a.navbar-brand {
     width: 9%;
 }
 
-nav.navbar .navbar-nav .nav-link.navbar-link,
-nav.navbar .navbar-nav .nav-link.navbar-link .dropdown-toggle {
+nav.navbar .navbar-nav .nav-link.navbar-link {
     font-weight: 500;
     color: #ffffff !important;
     letter-spacing: 0.8px;
