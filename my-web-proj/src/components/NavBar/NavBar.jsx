@@ -29,7 +29,7 @@ export const MyNavBar = () => {
             }
         }
         window.addEventListener('scroll', onScroll)
-        return () => window.removeEventListener('scroll', onScroll)
+        return () => {window.removeEventListener('scroll', onScroll)}
     }, [])
 
     const onUpdateActiveLink = val => {
@@ -37,7 +37,7 @@ export const MyNavBar = () => {
     }
     return (
         <Router>
-            <Navbar bg="light" expand="lg" className={scrolled ? 'scrolled' : ''}>
+            <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
                 <Container>
                     <Navbar.Brand href="#home">
                         <img src={logo} alt="logo" />
