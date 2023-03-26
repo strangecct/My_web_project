@@ -21,7 +21,7 @@ export default function Banner() {
             tick();
         }, delta)
         return () => { clearInterval(ticker) };
-    }, [text])
+    })
 
     const tick = () => {
         let i = loopNum % toRotate.length;

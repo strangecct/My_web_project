@@ -6,6 +6,7 @@
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+    box-shadow: 0 0 90px 20px #151515, inset 0 0 20px 5px #151515;
 }
 
 .banner .tagline {
