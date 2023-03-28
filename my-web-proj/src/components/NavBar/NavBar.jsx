@@ -84,7 +84,9 @@ export const MyNavBar = () => {
                             <a href="/ins"><img src={navIcon3} alt="" /></a>
                         </div>
                         <button className='vvd' onClick={() => console.log('button connect')}>
-                            <span>let' connect</span>
+                            <Nav.Link href="#connect"
+                                onClick={() => onUpdateActiveLink('skills')}
+                            >let' connect</Nav.Link>
                         </button>
                     </span>
                 </Container>

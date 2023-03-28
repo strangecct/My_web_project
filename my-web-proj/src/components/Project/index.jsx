@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row, Tab } from 'react-bootstrap'
 import Nav from 'react-bootstrap/Nav';
+import TrackVisibility from 'react-on-screen';
 import ProjCard from './ProjCard';
 
 import './index.css'
@@ -38,66 +39,71 @@ export default function Projects() {
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>随便放一段话，不知道写啥使用SVM、Barlow Twins、Faster-RcNN等算法配</p>
+                        <TrackVisibility>
+                            {({ isVisible }) =>
+                                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                                    <h2>Projects</h2>
+                                    <p>随便放一段话，不知道写啥使用SVM、Barlow Twins、Faster-RcNN等算法配</p>
+                                    <Tab.Container id='project-tabs' defaultActiveKey='first' >
+                                        <Nav variant="pills" defaultActiveKey="/home">
+                                            <Nav.Item>
+                                                <Nav.Link eventKey='first'>Tab1</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                <Nav.Link eventKey="second" >Tab2</Nav.Link>
+                                            </Nav.Item>
+                                            <Nav.Item>
+                                                {/* disabled 可以让一个link失效*/}
+                                                <Nav.Link eventKey="third">Tab3</Nav.Link>
+                                            </Nav.Item>
+                                        </Nav>
+                                        <Tab.Content>
+                                            <Tab.Pane eventKey='first'>
+                                                <Row>
+                                                    {
+                                                        projects.map((item, ind) => {
+                                                            return (
 
-                        <Tab.Container id='project-tabs' defaultActiveKey='first' >
-                            <Nav variant="pills" defaultActiveKey="/home">
-                                <Nav.Item>
-                                    <Nav.Link eventKey='first'>Tab1</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    <Nav.Link eventKey="second" >Tab2</Nav.Link>
-                                </Nav.Item>
-                                <Nav.Item>
-                                    {/* disabled 可以让一个link失效*/}
-                                    <Nav.Link eventKey="third">Tab3</Nav.Link>
-                                </Nav.Item>
-                            </Nav>
-                            <Tab.Content>
-                                <Tab.Pane eventKey='first'>
-                                    <Row>
-                                        {
-                                            projects.map((item, ind) => {
-                                                return (
+                                                                <ProjCard
+                                                                    key={ind}
+                                                                    // title={item.title} description={item.description} imgUrl={item.imgUrl}
+                                                                    {...item}
+                                                                />
 
-                                                    <ProjCard
-                                                        key={ind}
-                                                        // title={item.title} description={item.description} imgUrl={item.imgUrl}
-                                                        {...item}
-                                                    />
+                                                            )
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                            <Tab.Pane eventKey='second'>
+                                                <Row>
+                                                    {
+                                                        projects.map((item, ind) => {
+                                                            return (
+                                                                <p key={ind}>{item.title}</p>
 
-                                                )
-                                            })
-                                        }
-                                    </Row>
-                                </Tab.Pane>
-                                <Tab.Pane eventKey='second'>
-                                    <Row>
-                                        {
-                                            projects.map((item, ind) => {
-                                                return (
-                                                    <p key={ind}>{item.title}</p>
+                                                            )
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                            <Tab.Pane eventKey='third'>
+                                                <Row>
+                                                    {
+                                                        projects.map((item, ind) => {
+                                                            return (
+                                                                <p key={ind}>{item.title}</p>
 
-                                                )
-                                            })
-                                        }
-                                    </Row>
-                                </Tab.Pane>
-                                <Tab.Pane eventKey='third'>
-                                    <Row>
-                                        {
-                                            projects.map((item, ind) => {
-                                                return (
-                                                    <p key={ind}>{item.title}</p>
-
-                                                )
-                                            })
-                                        }
-                                    </Row>
-                                </Tab.Pane>
-                            </Tab.Content>
-                        </Tab.Container>
+                                                            )
+                                                        })
+                                                    }
+                                                </Row>
+                                            </Tab.Pane>
+                                        </Tab.Content>
+                                    </Tab.Container>
+                                </div>
+                            }
+                        </TrackVisibility>
                     </Col>
                 </Row>
             </Container>

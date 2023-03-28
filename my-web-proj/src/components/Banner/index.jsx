@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { ArrowRightCircle } from 'react-bootstrap-icons'
 import headerImg from '../../assets/img/header-img.svg'
+import TrackVisibility from 'react-on-screen';
 import './index.css'
 
 
@@ -49,22 +50,29 @@ export default function Banner() {
                 <Row className='align-items-center'>
                     {/* 这里的col干嘛的 */}
                     <Col xs={12} md={6} xl={9}>
-                        <span className='tagline'>
-                            Welcome to my world!
-                        </span>
-                        <h2>Profess Skill:
-                            <span className="txt-rotate" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
-                                <span className="wrap">{text}</span>
-                            </span>
-                        </h2>
-                        <p>Redux Toolkit 是我们推荐的编写 Redux 逻辑的方法。
-                            它包含我们认为对于构建 Redux 应用程序必不可少的包和函数。
-                            Redux Toolkit 构建是我们建议的最佳实践中，简化了大多数 Redux 任务，
-                            预防了常见错误，并使编写 Redux 应用程序变得更加容易。</p>
-                        <button onClick={() => console.log('connect')}>
-                            Connect the world
-                            <ArrowRightCircle size={25} />
-                        </button>
+                        <TrackVisibility>
+                            {({ isVisible }) => isVisible &&
+                                <div className='animate__animated animate__fadeIn animate__delay-.2s'>
+                                    <span className='tagline'>
+                                        Welcome to my world!
+                                    </span>
+                                    <h2>Profess Skill:
+                                        <span className="txt-rotate" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                                            <span className="wrap">{text}</span>
+                                        </span>
+                                    </h2>
+                                    <p>Redux Toolkit 是我们推荐的编写 Redux 逻辑的方法。
+                                        它包含我们认为对于构建 Redux 应用程序必不可少的包和函数。
+                                        Redux Toolkit 构建是我们建议的最佳实践中，简化了大多数 Redux 任务，
+                                        预防了常见错误，并使编写 Redux 应用程序变得更加容易。</p>
+                                    <button onClick={() => console.log('connect')}>
+                                        Connect the world
+                                        <ArrowRightCircle size={25} />
+                                    </button>
+                                </div>
+                            }
+
+                        </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={3}>
                         <img src={headerImg} alt="Header Img" />

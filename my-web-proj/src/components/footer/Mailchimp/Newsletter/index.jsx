@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap'
 import { Col, Row } from 'react-bootstrap'
 import './index.css'
 
-export default function Newsletter({ subscribe, status, message }) {
+export default function Newsletter({ onValidated, status, message }) {
     const [email, setEmail] = useState('')
 
     useEffect(() => {
@@ -14,11 +14,13 @@ export default function Newsletter({ subscribe, status, message }) {
     })
 
     const handleSubmit = async (e) => {
-        console.log(subscribe, status)
+        console.log(onValidated, status)
         e.preventDefault();
-        // email &&
-        //     email.indexOf('@') > -1 &&
-        //     subscribe();
+        email &&
+            email.indexOf('@') > -1 &&
+            onValidated({
+                EMAIL: email
+            });
     }
 
     const clearFields = () => {

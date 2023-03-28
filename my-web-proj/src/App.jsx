@@ -7,7 +7,7 @@ import Skills from "./components/Skills";
 import Projects from './components/Project';
 import Contact from './components/Contact';
 import Footer from './components/footer';
-
+import 'animate.css';
 
 function App() {
   return (
