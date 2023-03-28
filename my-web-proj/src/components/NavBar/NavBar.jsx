@@ -29,7 +29,7 @@ export const MyNavBar = () => {
             }
         }
         window.addEventListener('scroll', onScroll)
-        return () => {window.removeEventListener('scroll', onScroll)}
+        return () => { window.removeEventListener('scroll', onScroll) }
     }, [])
 
     const onUpdateActiveLink = val => {
@@ -57,10 +57,10 @@ export const MyNavBar = () => {
                                 className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'}
                                 onClick={() => onUpdateActiveLink('skills')}
                             >技能</Nav.Link>
-                            <Nav.Link href="#projects"
+                            <Nav.Link href="#project"
                                 className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'}
                                 onClick={() => onUpdateActiveLink('projects')}
-                            >校园经历</Nav.Link>
+                            >项目经历</Nav.Link>
                             {/* <NavDropdown title="Lessons" id="basic-nav-dropdown"
                             className={'navbar-link'}
                         >

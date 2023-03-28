@@ -37,7 +37,7 @@ export default function Skills() {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p>我掌握的一些技能</p>
-              {/* 轮播图插件吗？ */}
+              {/* 轮播图插件？ */}
               <Carousel
                 responsive={responsive}
                 infinite={true}

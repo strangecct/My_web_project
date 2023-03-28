@@ -60,11 +60,13 @@ export default function Projects() {
                                         {
                                             projects.map((item, ind) => {
                                                 return (
+
                                                     <ProjCard
                                                         key={ind}
                                                         // title={item.title} description={item.description} imgUrl={item.imgUrl}
                                                         {...item}
                                                     />
+
                                                 )
                                             })
                                         }

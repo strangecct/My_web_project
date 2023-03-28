@@ -53,7 +53,7 @@ export default function Banner() {
                             Welcome to my world!
                         </span>
                         <h2>Profess Skill:
-                            <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
+                            <span className="txt-rotate" data-rotate='[ "Web Developer", "Web Designer", "UI/UX Designer" ]'>
                                 <span className="wrap">{text}</span>
                             </span>
                         </h2>
@@ -61,7 +61,10 @@ export default function Banner() {
                             它包含我们认为对于构建 Redux 应用程序必不可少的包和函数。
                             Redux Toolkit 构建是我们建议的最佳实践中，简化了大多数 Redux 任务，
                             预防了常见错误，并使编写 Redux 应用程序变得更加容易。</p>
-                        <button onClick={() => console.log('connect')}>Connect the world<ArrowRightCircle size={25} /></button>
+                        <button onClick={() => console.log('connect')}>
+                            Connect the world
+                            <ArrowRightCircle size={25} />
+                        </button>
                     </Col>
                     <Col xs={12} md={6} xl={3}>
                         <img src={headerImg} alt="Header Img" />
